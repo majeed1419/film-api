@@ -8,8 +8,11 @@ import numpy as np
 # Load the saved model and scaler
 scaler = joblib.load('scaler.joblib')
 dbscan = joblib.load('dbscan_model.joblib')
-
 app = FastAPI()
+@app.get("/")
+def root():
+    return "Welcome To Tuwaiq Academy"
+
 
 # Define the request body structure
 class Data(BaseModel):
